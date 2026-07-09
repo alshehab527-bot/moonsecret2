@@ -2,7 +2,7 @@ const button = document.getElementById("startBtn");
 
 if (button) {
     button.addEventListener("click", function () {
-        window.location.href = "challenge.html";
+        window.location.href = "gift.html";
     });
 }
 

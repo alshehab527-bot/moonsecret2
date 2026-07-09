@@ -2,231 +2,229 @@
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>The Final Challenge</title>
+    <title>The Final Challenge</title>
 
-<style>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+        body {
 
-body{
+            height: 100vh;
+            overflow: hidden;
 
-height:100vh;
-overflow:hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
 
-display:flex;
-justify-content:center;
-align-items:center;
-flex-direction:column;
+            font-family: Georgia, serif;
 
-font-family:Georgia,serif;
+            background:
+                linear-gradient(rgba(0, 0, 0, .35), rgba(0, 0, 0, .35)),
+                url("magic-room.png");
 
-background:
-linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),
-url("magic-room.png");
+            background-size: cover;
+            background-position: center;
 
-background-size:cover;
-background-position:center;
+            color: white;
 
-color:white;
+        }
 
-}
+        h1 {
 
-h1{
+            font-size: 55px;
+            margin-bottom: 15px;
+            text-shadow: 0 0 15px violet;
 
-font-size:55px;
-margin-bottom:15px;
-text-shadow:0 0 15px violet;
+        }
 
-}
+        p {
 
-p{
+            font-size: 24px;
+            margin-bottom: 35px;
 
-font-size:24px;
-margin-bottom:35px;
+        }
 
-}
+        #ball {
 
-#ball{
+            font-size: 170px;
 
-font-size:170px;
+            cursor: pointer;
 
-cursor:pointer;
+            transition: .3s;
 
-transition:.3s;
+            filter: drop-shadow(0 0 20px #9f6cff);
 
-filter:drop-shadow(0 0 20px #9f6cff);
+            user-select: none;
 
-user-select:none;
+        }
 
-}
+        #ball:hover {
 
-#ball:hover{
+            transform: scale(1.08);
 
-transform:scale(1.08);
+        }
 
-}
+        #count {
 
-#count{
+            margin-top: 25px;
 
-margin-top:25px;
+            font-size: 28px;
 
-font-size:28px;
+        }
 
-}
+        #message {
 
-#message{
+            margin-top: 20px;
 
-margin-top:20px;
+            font-size: 26px;
 
-font-size:26px;
+            height: 35px;
 
-height:35px;
+            color: #ffe97d;
 
-color:#ffe97d;
+        }
 
-}
+        button {
 
-button{
+            display: none;
 
-display:none;
+            margin-top: 35px;
 
-margin-top:35px;
+            padding: 18px 45px;
 
-padding:18px 45px;
+            font-size: 22px;
 
-font-size:22px;
+            border: none;
 
-border:none;
+            border-radius: 50px;
 
-border-radius:50px;
+            background: #ffd84d;
 
-background:#ffd84d;
+            cursor: pointer;
 
-cursor:pointer;
+            transition: .3s;
 
-transition:.3s;
+        }
 
-}
+        button:hover {
 
-button:hover{
+            transform: scale(1.08);
 
-transform:scale(1.08);
+        }
 
-}
+        .sparkle {
 
-.sparkle{
+            animation: flash .5s;
 
-animation:flash .5s;
+        }
 
-}
+        @keyframes flash {
 
-@keyframes flash{
+            0% {
 
-0%{
+                transform: scale(1);
 
-transform:scale(1);
+            }
 
-}
+            50% {
 
-50%{
+                transform: scale(1.2);
 
-transform:scale(1.2);
+                filter: drop-shadow(0 0 50px violet);
 
-filter:drop-shadow(0 0 50px violet);
+            }
 
-}
+            100% {
 
-100%{
+                transform: scale(1);
 
-transform:scale(1);
+            }
 
-}
-
-}
-
-</style>
+        }
+    </style>
 
 </head>
 
 <body>
 
-<h1>✨ One Last Spell ✨</h1>
+    <h1>✨ One Last Spell ✨</h1>
 
-<p>cast one last spell to reveal your final gift...</p>
+    <p>cast one last spell to reveal your final gift...</p>
 
-<div id="ball">🔮</div>
+    <div id="ball">🔮</div>
 
-<div id="count">0 / 5</div>
+    <div id="count">0 / 5</div>
 
-<div id="message"></div>
+    <div id="message"></div>
 
-<button onclick="location.href='message.html'">
-💌 Open My Final Letter
-</button>
+    <button onclick="location.href='message.html'">
+        💌 Open My Final Letter
+    </button>
 
-<script>
+    <script>
 
-let taps=0;
+        let taps = 0;
 
-const ball=document.getElementById("ball");
-const count=document.getElementById("count");
-const message=document.getElementById("message");
-const button=document.querySelector("button");
+        const ball = document.getElementById("ball");
+        const count = document.getElementById("count");
+        const message = document.getElementById("message");
+        const button = document.querySelector("button");
 
-const texts=[
+        const texts = [
 
-"The magic is waking up...",
+            "The magic is waking up...",
 
-"The crystal is glowing...",
+            "The crystal is glowing...",
 
-"Almost there...",
+            "Almost there...",
 
-"One last touch...",
+            "One last touch...",
 
-"✨ The spell is complete! ✨"
+            "✨ The spell is complete! ✨"
 
-];
+        ];
 
-ball.onclick=function(){
+        ball.onclick = function () {
 
-if(taps>=5)return;
+            if (taps >= 5) return;
 
-taps++;
+            taps++;
 
-count.innerHTML=taps+" / 5";
+            count.innerHTML = taps + " / 5";
 
-message.innerHTML=texts[taps-1];
+            message.innerHTML = texts[taps - 1];
 
-ball.classList.remove("sparkle");
+            ball.classList.remove("sparkle");
 
-void ball.offsetWidth;
+            void ball.offsetWidth;
 
-ball.classList.add("sparkle");
+            ball.classList.add("sparkle");
 
-ball.style.transform="scale("+(1+taps*0.05)+")";
+            ball.style.transform = "scale(" + (1 + taps * 0.05) + ")";
 
-if(taps==5){
+            if (taps == 5) {
 
-message.innerHTML="✨ The spell is complete... ✨";
+                message.innerHTML = "✨ The spell is complete... ✨";
 
-setTimeout(function(){
+                setTimeout(function () {
 
-button.style.display="inline-block";
+                    button.style.display = "inline-block";
 
-},1000);
+                }, 1000);
 
-}
+            }
 
-}
+        }
 
-</script>
+    </script>
 
 </body>
 
