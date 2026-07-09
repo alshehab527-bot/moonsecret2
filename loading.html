@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loading...</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+.loader{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    text-align:center;
+}
+
+.loader h1{
+    font-size:70px;
+    animation: glow 2s infinite;
+}
+
+.loader p{
+    font-size:24px;
+    margin-top:20px;
+}
+
+@keyframes glow{
+
+0%,100%{
+opacity:.5;
+}
+
+50%{
+opacity:1;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="loader">
+
+<h1>🌙</h1>
+
+<p>Loading your little world...</p>
+
+<p>✨</p>
+
+</div>
+
+<script>
+
+setTimeout(function(){
+
+window.location.href="index.html";
+
+},2500);
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>One Last Thing 🌙</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🌙</h1>
+
+<h2>One Last Thing...</h2>
+
+<p id="line1">
+Before you read my letter...
+</p>
+
+<p id="line2" style="display:none;">
+I hope today reminds you
+how truly special you are.
+</p>
+
+<p id="line3" style="display:none;">
+I hope every smile you make today
+comes back to you
+a thousand times.
+</p>
+
+<p id="line4" style="display:none;">
+May this birthday be the beginning
+of your happiest chapter yet.
+</p>
+
+<p id="line5" style="display:none;">
+Never stop believing
+in your own magic
+</p>
+
+<p id="line6" style="display:none;">
+Mama...
+🌙✨
+</p>
+
+<br><br>
+
+<button id="letterBtn" style="display:none;">
+💌 Read My Letter
+</button>
+
+</div>
+
+<script>
+
+setTimeout(function(){
+document.getElementById("line2").style.display="block";
+},1500);
+
+setTimeout(function(){
+document.getElementById("line3").style.display="block";
+},3000);
+
+setTimeout(function(){
+document.getElementById("line4").style.display="block";
+},4500);
+
+setTimeout(function(){
+document.getElementById("line5").style.display="block";
+},6000);
+
+setTimeout(function(){
+document.getElementById("line6").style.display="block";
+},7500);
+
+setTimeout(function(){
+document.getElementById("letterBtn").style.display="inline-block";
+},9000);
+
+document.getElementById("letterBtn").onclick = function(){
+
+window.location.href = "challenge.html";
+
+}
+
+</script>
+
+</body>
+</html>

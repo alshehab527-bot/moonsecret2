@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Star ⭐</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        #star{
+            font-size:120px;
+            cursor:pointer;
+            transition:0.5s;
+            margin-bottom:20px;
+        }
+
+        #wish{
+            max-width:700px;
+            margin:30px auto;
+            line-height:1.8;
+            font-size:22px;
+            white-space:pre-line;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div id="star">⭐</div>
+
+    <h1>Your Star</h1>
+
+    <p id="touch">
+        Touch your star...
+    </p>
+
+    <p id="wish"></p>
+
+</div>
+
+<script>
+
+const star = document.getElementById("star");
+const wish = document.getElementById("wish");
+const touch = document.getElementById("touch");
+
+const text = `
+Some people wish upon stars...
+
+But I think stars were made to remind us that even in the darkest nights,
+there is always something beautiful waiting above.
+
+So whenever you see the moon and the stars,
+think of this little corner of the sky that belongs to you.
+
+May your days be filled with magic,
+your nights with peace,
+and your heart with all the happiness you deserve.
+
+Happy Birthday, Little Witch.
+
+Keep shining...
+
+Just like your star.
+
+See you under the next moon... 🌙✨
+`;
+
+let i = 0;
+
+function typing(){
+
+    if(i < text.length){
+
+        wish.innerHTML += text.charAt(i) === "\n"
+            ? "<br>"
+            : text.charAt(i);
+
+        i++;
+window.scrollTo({
+    top:document.body.scrollHeight,
+    behavior:"smooth"
+});
+
+        setTimeout(typing,30);
+
+    }
+
+}
+
+star.onclick = function(){
+
+    touch.innerHTML = "";
+
+    wish.innerHTML = "";
+
+    i = 0;
+
+    star.style.opacity = "0";
+    star.style.pointerEvents = "none";
+
+    typing();
+
+};
+
+</script>
+
+</body>
+</html>

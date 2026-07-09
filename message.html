@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Moon Letter 🌙</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🌙 A Letter For You</h1>
+
+<p id="letterText"></p>
+
+</div>
+
+<script>
+
+const text = `
+
+Happy Birthday, Little Witch
+
+I don't think words could ever be enough to describe how grateful I am that you became part of my life
+
+Thank you for every laugh...
+Every memory...
+Every little moment
+
+No matter where life takes us,
+I'll always be cheering for you.
+
+May this year bring you happiness,
+peace,
+and every dream your heart wishes for.
+
+Happy Birthday.
+
+See you under the next moon mommy...
+
+🌙✨
+`;
+
+let i = 0;
+
+function typeLetter(){
+
+    if(i < text.length){
+
+        document.getElementById("letterText").innerHTML +=
+        text.charAt(i) === "\n" ? "<br>" : text.charAt(i);
+
+        i++;
+
+        setTimeout(typeLetter,35);
+
+    }
+
+}
+
+typeLetter();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Make A Birthday Wish ✨</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🌙</h1>
+
+<h2>Before you read my letter...</h2>
+
+<p id="line1">
+Close your eyes...
+</p>
+
+<p id="line2" style="display:none;">
+Smile...
+</p>
+
+<p id="line3" style="display:none;">
+and make one birthday wish.
+</p>
+
+<p id="line4" style="display:none;">
+✨
+</p>
+
+<p id="line5" style="display:none;">
+Keep it in your heart...
+</p>
+
+<p id="line6" style="display:none;">
+The moon will keep it safe.
+</p>
+
+<br><br>
+
+<button id="readyBtn" style="display:none;">
+✨ I'm Ready ✨
+</button>
+
+</div>
+
+<script>
+
+setTimeout(()=>{
+
+document.getElementById("line2").style.display="block";
+
+},1500);
+
+setTimeout(()=>{
+
+document.getElementById("line3").style.display="block";
+
+},3000);
+
+setTimeout(()=>{
+
+document.getElementById("line4").style.display="block";
+
+},4500);
+
+setTimeout(()=>{
+
+document.getElementById("line5").style.display="block";
+
+},6000);
+
+setTimeout(()=>{
+
+document.getElementById("line6").style.display="block";
+
+},7500);
+
+setTimeout(()=>{
+
+document.getElementById("readyBtn").style.display="inline-block";
+
+},9000);
+
+document.getElementById("readyBtn").onclick=function(){
+
+window.location.href="onelastthing.html";
+
+}
+
+</script>
+
+</body>
+</html>
